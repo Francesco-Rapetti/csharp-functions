@@ -47,6 +47,8 @@
                 return array.Sum();
             }
 
+            Console.WriteLine();
+
             // Snack 5
             /*
                 Una volta completate queste funzioni di utilità di base, 
@@ -57,7 +59,7 @@
                     (Verificare che l’array originale non sia stato modificato quindi ristampare 
                     nuovamente l’array originale e verificare che sia rimasto [2, 6, 7, 5, 3, 9])
                 - Stampare la somma di tutti i numeri
-                - Stampare la somma di tutti i numeri elevati al quadrati
+                - Stampare la somma di tutti i numeri elevati al quadrato
             */
             Console.WriteLine(Prettifier("Snack 5"));
             int[] array = { 2, 6, 7, 5, 3, 9 };
@@ -66,6 +68,47 @@
             StampaArray(array);
             Console.WriteLine(sommaElementiArray(array));
             Console.WriteLine(sommaElementiArray(ElevaArrayAlQuadrato(array)));
+
+            Console.WriteLine();
+
+            // BONUS
+            /* 
+                Convertire le funzioni appena dichiarate in funzioni generiche, 
+                ossia funzioni che possono lavorare con array di numeri interi **di lunghezza variabile**, 
+                ossia debbono poter funzionare sia che gli passi array di 5 elementi, sia di 6, di 7, di ... e così via.
+                A questo punto modificare il programma in modo che chieda all’utente quanti numeri voglia inserire, 
+                e dopo di che questi vengono inseriti a mano dall’utente esternamente. 
+                Rieseguire il programma con l’input preso esternamente dall’utente.
+            */
+            Console.WriteLine(Prettifier("BONUS"));
+            Console.WriteLine("Inserisci quanti numeri vuoi");
+            int arrayLength = Convert.ToInt32(Console.ReadLine());
+            int[] userArray = new int[arrayLength];
+            bool control = true;
+            for (int i = 0; i < arrayLength; i++)
+            {
+                while (control)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Inserisci il {i + 1}° numero");
+                        userArray[i] = Convert.ToInt32(Console.ReadLine());
+                        control = false;
+
+                    } catch (FormatException)
+                    {
+                        Console.WriteLine("ERRORE: Il valore inserito non è un numero");
+                        control = true;
+                    }
+                }
+                control = true;
+            }
+            Console.WriteLine();
+            StampaArray(userArray);
+            StampaArray(ElevaArrayAlQuadrato(userArray));
+            StampaArray(userArray);
+            Console.WriteLine(sommaElementiArray(userArray));
+            Console.WriteLine(sommaElementiArray(ElevaArrayAlQuadrato(userArray)));
         }
 
         private static string Prettifier(string input)
