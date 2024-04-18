@@ -30,6 +30,18 @@
             {
                 return numero * numero;
             }
+
+            Console.WriteLine();
+
+            // Snack 3
+            // - int[] ElevaArrayAlQuadrato(int[] array): che preso un array di numeri interi, restituisca un nuovo array con tutti gli elementi elevati quadrato. 
+            // ATTENZIONE: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione!
+            Console.WriteLine(Prettifier("Snack 3"));
+            StampaArray(ElevaArrayAlQuadrato(new int[] { 1, 2, 3, 4, 5 }));
+            int[] ElevaArrayAlQuadrato(int[] array)
+            {
+                return array.Select(x => Quadrato(x)).ToArray();
+            }
         }
 
         private static string Prettifier(string input)
