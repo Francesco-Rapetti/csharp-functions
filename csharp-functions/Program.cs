@@ -10,14 +10,7 @@
             StampaArray(new int[] { 1, 2, 3, 4, 5 });
             void StampaArray(int[] array)
             {
-                Console.Write("[");
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Console.Write(array[i]);
-                    if (i < array.Length - 1)
-                        Console.Write(", ");
-                }
-                Console.WriteLine("]");
+                Console.WriteLine($"[{String.Join(", ", array)}]");
             }
 
             Console.WriteLine();
@@ -41,6 +34,17 @@
             int[] ElevaArrayAlQuadrato(int[] array)
             {
                 return array.Select(x => Quadrato(x)).ToArray();
+            }
+
+            Console.WriteLine();
+
+            // Snack 4
+            // - int sommaElementiArray(int[] array): che preso un array di numeri interi, restituisca la somma totale di tutti gli elementi dell’array.
+            Console.WriteLine(Prettifier("Snack 4"));
+            Console.WriteLine(sommaElementiArray(new int[] { 1, 2, 3, 4, 5 }));
+            int sommaElementiArray(int[] array)
+            {
+                return array.Sum();
             }
         }
 
