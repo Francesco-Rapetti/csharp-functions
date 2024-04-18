@@ -81,10 +81,23 @@
                 Rieseguire il programma con l’input preso esternamente dall’utente.
             */
             Console.WriteLine(Prettifier("BONUS"));
-            Console.WriteLine("Inserisci quanti numeri vuoi");
-            int arrayLength = Convert.ToInt32(Console.ReadLine());
-            int[] userArray = new int[arrayLength];
             bool control = true;
+            Console.WriteLine("Inserisci quanti numeri vuoi");
+            int arrayLength = 0;
+            while (control)
+            {
+                try
+                {
+                    arrayLength = Convert.ToInt32(Console.ReadLine());
+                    control = false;
+                } catch (FormatException)
+                {
+                    Console.WriteLine("ERRORE: Il valore inserito non è un numero");
+                    control = true;
+                }
+            }
+            control = true;
+            int[] userArray = new int[arrayLength];
             for (int i = 0; i < arrayLength; i++)
             {
                 while (control)
