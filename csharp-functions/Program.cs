@@ -46,6 +46,26 @@
             {
                 return array.Sum();
             }
+
+            // Snack 5
+            /*
+                Una volta completate queste funzioni di utilità di base, 
+                e dato il seguente array di numeri [2, 6, 7, 5, 3, 9] già dichiarato nel vostro codice, 
+                si vogliono utilizzare le funzioni per:
+                - Stampare l’array di numeri fornito a video
+                - Stampare l’array di numeri fornito a video, dove ogni numero è stato prima elevato al quadrato 
+                    (Verificare che l’array originale non sia stato modificato quindi ristampare 
+                    nuovamente l’array originale e verificare che sia rimasto [2, 6, 7, 5, 3, 9])
+                - Stampare la somma di tutti i numeri
+                - Stampare la somma di tutti i numeri elevati al quadrati
+            */
+            Console.WriteLine(Prettifier("Snack 5"));
+            int[] array = { 2, 6, 7, 5, 3, 9 };
+            StampaArray(array);
+            StampaArray(ElevaArrayAlQuadrato(array));
+            StampaArray(array);
+            Console.WriteLine(sommaElementiArray(array));
+            Console.WriteLine(sommaElementiArray(ElevaArrayAlQuadrato(array)));
         }
 
         private static string Prettifier(string input)
