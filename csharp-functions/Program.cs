@@ -17,11 +17,19 @@
                     if (i < array.Length - 1)
                         Console.Write(", ");
                 }
-                Console.Write("]");
+                Console.WriteLine("]");
             }
 
+            Console.WriteLine();
 
             // Snack 2
+            // - int Quadrato(int numero): che vi restituisca il quadrato del numero passato come parametro.
+            Console.WriteLine(Prettifier("Snack 2"));
+            Console.WriteLine(Quadrato(5));
+            int Quadrato(int numero)
+            {
+                return numero * numero;
+            }
         }
 
         private static string Prettifier(string input)
